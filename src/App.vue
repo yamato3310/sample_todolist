@@ -1,28 +1,47 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Todoリスト!</h1>
+    <ul>
+      <li v-for="todo in todos" :key="todos.indexOf(todo)" class="todo-items">
+        <div class="todo-text">
+          {{todo}}
+        </div>
+        <div>
+          <button id="delete-item" @click="deleteItem(todo)">完了</button>
+        </div>
+      </li>
+    </ul>
+    <div>
+      <div>
+         <input id="todo-text" type="text" v-model="newItem">
+      </div>
+      <div>
+        <button id="add-item" @click="addItem">追加</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data: function () {
+    return {
+      todos: [],
+      newItem: ""
+    }
+  },
+  methods: {
+    deleteItem(item) {
+      this.todos = this.todos.filter(listItem => listItem != item)
+    },
+    addItem() {
+      this.todos.push(this.newItem)
+      this.newItem = ""
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
