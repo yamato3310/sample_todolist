@@ -8,4 +8,5 @@ services:
       - .:/usr/src/app
     stdin_open: true
     tty: true
-    command: npm run serve
+    # command: npm run serve
+    command: /bin/sh

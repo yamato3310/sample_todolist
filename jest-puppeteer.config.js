@@ -5,4 +5,9 @@ module.exports = {
     port: 8080,
     launchTimeout: 100000,
   },
+  launch: {
+    args: [
+      '--no-sandbox'
+    ]
+  },
 };
