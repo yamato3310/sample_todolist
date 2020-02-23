@@ -8,5 +8,8 @@ jobs:
           name: Build Docker Image
           command: docker-compose up -d --build
       - run:
+          name: npm install
+          command: npm install
+      - run:
           name: Run tests
           command: npm run test:e2e
