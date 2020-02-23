@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "test:e2e": "jest --config=jest.e2e.config.js --runInBand",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -16,8 +17,14 @@
     "@vue/cli-plugin-eslint": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "jest": "^24.8.0",
+    "jest-puppeteer": "^4.2.0",
+    "puppeteer": "^1.17.0",
+    "vue-cli-plugin-jest-puppeteer": "^0.1.4",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
